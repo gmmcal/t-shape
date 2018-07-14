@@ -1,0 +1,98 @@
+{
+  "name": "t-shape",
+  "version": "0.0.1",
+  "private": true,
+  "description": "T-Shape Profile",
+  "author": "Gustavo Cunha <gustavo.cunha@kpn.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "10.5.0",
+    "npm": "6.1.0",
+    "yarn": "1.7.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "yarn build",
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test": "jest --watch",
+    "test:once": "jest"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.16.3",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "vue": "^2.5.16",
+    "vue-draggable-resizable": "^1.7.1"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-jest": "^23.4.0",
+    "jest": "^23.4.0",
+    "jest-canvas-mock": "^1.1.0",
+    "vue-jest": "^2.6.0",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "spec",
+      "src"
+    ],
+    "setupFiles": [
+      "jest-canvas-mock"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "app/javascript/packs/components/**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
