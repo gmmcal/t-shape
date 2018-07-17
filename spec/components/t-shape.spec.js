@@ -1,13 +1,24 @@
-import { mount } from '@vue/test-utils'
+import Vuex from 'vuex'
+import { mount, createLocalVue } from '@vue/test-utils'
 import Arm from '@/components/arm'
 import Leg from '@/components/leg'
 import TShape from '@/components/t-shape'
+import { __createMocks as createStoreMocks } from '../mocks/store'
 
 describe('TShape', () => {
   let wrapper
 
   beforeAll(() => {
-    wrapper = mount(TShape)
+    jest.mock('@/store')
+    const localVue = createLocalVue()
+
+    localVue.use(Vuex)
+
+    const storeMocks = createStoreMocks()
+    wrapper = mount(TShape, {
+      store: storeMocks.store,
+      localVue,
+    })
   })
 
   test('Component is a Vue instance', () => {

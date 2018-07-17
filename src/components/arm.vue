@@ -1,11 +1,11 @@
 <template>
   <div class="arm">
-    <skill text="Vue.js" v-bind:x="50" v-bind:y="10" />
-    <skill text="React" v-bind:x="300" v-bind:y="30"/>
+    <skill v-for="skill in skills" :key="skill.name" :skill="skill" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Skill from './skill'
 
 export default {
@@ -13,6 +13,9 @@ export default {
   components: {
     'skill': Skill,
   },
+  computed: mapGetters({
+    skills: 'arms'
+  })
 }
 </script>
 

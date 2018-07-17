@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>Welcome to T-Shape Profile builder</h1>
+    <skill-form />
     <arm />
     <leg />
   </div>
@@ -8,11 +9,13 @@
 
 <script>
 import Arm from './arm'
+import Form from './form'
 import Leg from './leg'
 
 export default {
   name: 'TShape',
   components: {
+    'skill-form': Form,
     'leg': Leg,
     'arm': Arm,
   }

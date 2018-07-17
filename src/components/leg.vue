@@ -1,18 +1,21 @@
 <template>
   <div class="leg">
-    <skill text="Ruby" v-bind:x="20" v-bind:y="100" />
-    <skill text="Rails" v-bind:x="150" v-bind:y="20"/>
+    <skill v-for="skill in skills" :key="skill.name" :skill="skill" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Skill from './skill'
 
 export default {
   name: 'Leg',
   components: {
     'skill': Skill,
-  }
+  },
+  computed: mapGetters({
+    skills: 'legs'
+  })
 }
 </script>
 

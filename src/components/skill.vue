@@ -1,6 +1,6 @@
 <template>
-  <vue-draggable :active="false" :parent="true" :w="50" :h="50" :x="x" :y="y" :z="0">
-    <p>{{ text }}</p>
+  <vue-draggable :active="false" :parent="true" :w="w" :h="h" :x="x" :y="y" :z="0">
+    <p>{{ name }}</p>
   </vue-draggable>
 </template>
 
@@ -13,17 +13,26 @@ export default {
     'vue-draggable': VueDraggableResizable,
   },
   props: {
-    text: {
-      type: String,
+    skill: {
+      type: Object,
       required: true
+    }
+  },
+  computed: {
+    name() {
+      return this.skill.name
     },
-    x: {
-      type: Number,
-      required: true
+    x() {
+      return this.skill.x || 0
     },
-    y: {
-      type: Number,
-      required: true
+    y() {
+      return this.skill.y || 0
+    },
+    w() {
+      return this.skill.w || 150
+    },
+    h() {
+      return this.skill.h || 50
     }
   }
 }

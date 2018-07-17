@@ -20,13 +20,14 @@
     "test:once": "jest"
   },
   "dependencies": {
-    "babel-preset-env": "^1.7.0",
-    "express": "^4.16.3",
-    "@vue/cli-service": "^3.0.0-beta.15",
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.16.3",
     "vue": "^2.5.16",
-    "vue-draggable-resizable": "^1.7.1"
+    "vue-draggable-resizable": "^1.7.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.20",
